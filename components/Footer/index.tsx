@@ -11,30 +11,29 @@ import Link from "next/link";
 
 const footerLinks: FooterLink[] = [
   {
-    title: "Company",
+    title: "Dịch vụ",
     links: [
-      { name: "About Us", link: "/about" },
-      { name: "Portfolio", link: "https://portfolio.newdanang.vn" },
-      { name: "Blog", link: "/blog" },
-      { name: "Contact", link: "/contact" },
+      { name: "Tạo web cho nhà xe", link: "/" },
+      { name: "Xem demo", link: "/demo" },
+      { name: "Bảng giá", link: "/#pricing" },
+      { name: "Liên hệ", link: "/#contact" },
     ],
   },
   {
-    title: "Services",
+    title: "Thông tin",
     links: [
-      { name: "Web Design", link: "/services/web-design" },
-      { name: "Web Development", link: "/services/web-development" },
-      { name: "UI/UX Design", link: "/services/ui-ux" },
-      { name: "Landing Page", link: "/services/landing-page" },
+      { name: "Về NewDanang", link: "/about" },
+      { name: "Chính sách", link: "/privacy" },
+      { name: "Điều khoản", link: "/terms" },
     ],
   },
   {
-    title: "Socials",
+    title: "Liên hệ",
     links: [
+      { name: "Zalo", link: "https://zalo.me/0769222297" },
       { name: "Facebook", link: "https://www.facebook.com/newdanang.vn" },
-      { name: "TikTok", link: "https://www.tiktok.com/@newdanang" },
-      { name: "YouTube", link: "https://www.youtube.com/@newdanang" },
-      { name: "Zalo", link: "https://zalo.me/123456789" },
+      { name: "Email", link: "mailto:info@newdanang.vn" },
+      { name: "Hotline", link: "tel:0769222297" },
     ],
   },
 ];
@@ -61,10 +60,21 @@ const Footer = () => {
                     NEWDANANG.VN
                   </span>
                 </Link>
-                <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                  We build high-performance websites and landing pages for
-                  startups, entrepreneurs and marketing campaigns.
+                <p className="mb-6 text-base leading-relaxed text-body-color dark:text-body-color-dark">
+                  Dịch vụ tạo website chuyên nghiệp cho nhà xe miền Trung. 
+                  Giúp doanh nghiệp của bạn có mặt online, tăng doanh thu.
                 </p>
+                <div className="mb-4 space-y-2 text-sm">
+                  <a href="tel:0769222297" className="block text-body-color hover:text-primary dark:text-body-color-dark dark:hover:text-primary">
+                    📞 0769 222 297
+                  </a>
+                  <a href="https://zalo.me/0769222297" className="block text-body-color hover:text-primary dark:text-body-color-dark dark:hover:text-primary">
+                    💬 Zalo: 0769 222 297
+                  </a>
+                  <a href="mailto:info@newdanang.vn" className="block text-body-color hover:text-primary dark:text-body-color-dark dark:hover:text-primary">
+                    📧 info@newdanang.vn
+                  </a>
+                </div>
                 <div className="flex items-center">
                   <a
                     href="/"
