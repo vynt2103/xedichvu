@@ -1,13 +1,9 @@
+'use client';
+
 import { OPERATORS } from '@/lib/mock';
 import Link from 'next/link';
 import { MapPin, Phone, MessageCircle, ShieldCheck, Mail } from 'lucide-react';
 import Image from 'next/image';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Danh sách nhà xe | NewDanang.vn',
-  description: 'Danh sách các nhà xe đã tin tưởng NewDanang.vn để tạo website chuyên nghiệp.',
-};
 
 export default function OperatorsPage() {
   return (
@@ -98,7 +94,6 @@ export default function OperatorsPage() {
                   {operator.contacts.phone && (
                     <a
                       href={`tel:${operator.contacts.phone}`}
-                      onClick={(e) => e.stopPropagation()}
                       className="flex items-center gap-1.5 text-sm text-gray-700 dark:text-body-color-dark hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
                       <Phone size={14} />
@@ -108,7 +103,6 @@ export default function OperatorsPage() {
                   {operator.contacts.zalo && (
                     <a
                       href={operator.contacts.zalo}
-                      onClick={(e) => e.stopPropagation()}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-700 transition-colors"
