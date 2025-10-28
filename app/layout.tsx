@@ -4,7 +4,9 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-//import "node_modules/react-modal-video/css/modal-video.css";
+import ProgressBar from "@/components/Common/ProgressBar";
+import PageTransition from "@/components/Common/PageTransition";
+import { Providers } from "./providers";
 import "../styles/index.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,8 +21,11 @@ export default function RootLayout({
       <head />
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <Providers>
+          <ProgressBar />
           <Header />
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
           <Footer />
           <ScrollToTop />
         </Providers>
@@ -28,5 +33,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-import { Providers } from "./providers";

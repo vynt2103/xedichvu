@@ -3,7 +3,7 @@ import { Operator } from './types';
 export const OPERATORS: Operator[] = [
   {
     slug: 'anh-khang-travel',
-    name: 'Trần Thành Travel',
+    name: 'Đại Hiệp Travel',
     verified: true,
     active: true,
     shortDesc: 'Chuyên xe du lịch & dịch vụ cưới hỏi miền Trung. Uy tín, đúng giờ, giá tốt nhất thị trường.',
@@ -14,13 +14,13 @@ export const OPERATORS: Operator[] = [
     contacts: {
       phone: '0769222297',
       zalo: 'https://zalo.me/0769222297',
-      facebook: 'https://facebook.com/tranthanhtravel',
+      facebook: 'https://facebook.com/daihieptravel',
       whatsapp: '+840769222297',
-      instagram: 'https://instagram.com/tranthanhtravel',
-      email: 'contact@tranthanh.vn'
+      instagram: 'https://instagram.com/daihieptravel',
+      email: 'contact@daihiep.vn'
     },
-    logo: '/images/logo/logo.svg',
-    cover: '/images/brands/tailgrids.svg',
+    logo: '/anhkhang/avata.png',
+    // cover: '/images/brands/tailgrids.svg', // Temporarily removed to show brand name background
     vehicles: [
       {
         id: 'v1',
@@ -28,7 +28,7 @@ export const OPERATORS: Operator[] = [
         seat: 7,
         vclass: 'cao-cap',
         verified: true,
-        images: ['/images/blog/blog-01.jpg', '/images/blog/blog-02.jpg'],
+        images: ['/anhkhang/xe/toyota-fortuner-2023.jpg', '/anhkhang/xe/toyota-fortuner-2023-2.jpg'],
         desc: 'Xe 7 chỗ cao cấp, nội thất da sang trọng, đời 2023. Phù hợp cho gia đình hoặc nhóm nhỏ đi du lịch.',
         tags: ['Bao tài xế', 'Có hóa đơn', 'Nội thất da'],
         active: true
@@ -39,7 +39,7 @@ export const OPERATORS: Operator[] = [
         seat: 16,
         vclass: 'thuong',
         verified: true,
-        images: ['/images/blog/blog-03.jpg'],
+        images: ['/anhkhang/xe/ford-transit-16.jpg'],
         desc: 'Xe 16 chỗ rộng rãi, thoáng mát. Thích hợp cho đoàn 10-14 khách, công ty, nhóm bạn.',
         tags: ['Rộng rãi', 'Ghế mềm'],
         active: true
@@ -50,7 +50,7 @@ export const OPERATORS: Operator[] = [
         seat: 29,
         vclass: 'thuong',
         verified: false,
-        images: ['/images/blog/blog-01.jpg'],
+        images: ['/anhkhang/xe/hyundai-county-2022-2023-hinh-anh.jpg'],
         desc: 'Xe 29 chỗ, đời 2022, máy lạnh mạnh.',
         tags: ['Máy lạnh tốt'],
         active: true
@@ -61,7 +61,7 @@ export const OPERATORS: Operator[] = [
         seat: 7,
         vclass: 'vip',
         verified: true,
-        images: ['/images/blog/blog-02.jpg'],
+        images: ['/anhkhang/xe/mercedes-v-class.webp'],
         desc: 'Xe VIP sang trọng, phục vụ sự kiện cao cấp, cưới hỏi, đón đại biểu.',
         tags: ['VIP', 'Trang trí hoa', 'Ghế da VIP'],
         active: true
@@ -69,52 +69,125 @@ export const OPERATORS: Operator[] = [
     ],
     services: [
       {
-        id: 's1',
+        id: 's1-basic',
         type: 'su-kien',
-        title: 'Xe cưới hỏi & sự kiện VIP',
-        region: 'Đà Nẵng – Huế – Hội An',
-        desc: 'Phục vụ cưới hỏi, đón dâu, sự kiện, VIP. Xe được trang trí hoa tươi, có hóa đơn đầy đủ.',
+        title: 'Xe cưới hỏi - Gói Basic',
+        region: 'Đà Nẵng – Hội An',
+        desc: 'Gói cưới hỏi cơ bản, phù hợp ngân sách tiết kiệm. Xe đời mới, tài xế chuyên nghiệp.',
         image: '/images/blog/post-01.jpg',
-        tags: ['VIP', 'Trang trí hoa', 'Có hóa đơn'],
+        tags: ['Trang trí cơ bản', 'Bao tài xế', 'Trong tỉnh'],
         options: [
-          { 
-            vehicleType: 4, 
-            price: 700000, 
-            priceUnit: 'chuyen', 
-            note: 'Xe 4 chỗ, trang trí cơ bản' 
+          {
+            packageName: 'Gói 4 giờ',
+            vehicleType: 4,
+            duration: 4,
+            price: 700000,
+            priceUnit: 'goi',
+            includes: [
+              'Xe 4-7 chỗ đời mới',
+              'Trang trí hoa cơ bản',
+              'Bao tài xế 4 giờ',
+              'Nội thành Đà Nẵng'
+            ]
           },
-          { 
-            vehicleType: 5, 
-            price: 800000, 
-            priceUnit: 'chuyen', 
-            note: 'Xe 5 chỗ, bao tài xế, trang trí cơ bản' 
+          {
+            packageName: 'Gói 6 giờ',
+            vehicleType: 4,
+            duration: 6,
+            price: 1000000,
+            priceUnit: 'goi',
+            includes: [
+              'Xe 4-7 chỗ đời mới',
+              'Trang trí hoa cơ bản',
+              'Bao tài xế 6 giờ',
+              'Trong tỉnh Quảng Nam'
+            ]
+          }
+        ],
+        active: true
+      },
+      {
+        id: 's1-standard',
+        type: 'su-kien',
+        title: 'Xe cưới hỏi - Gói Standard',
+        region: 'Đà Nẵng – Huế – Hội An',
+        desc: 'Gói cưới hỏi phổ biến nhất. Xe Fortuner/Innova cao cấp, trang trí hoa đẹp.',
+        image: '/images/blog/post-02.jpg',
+        tags: ['Trang trí cao cấp', 'Xe Fortuner', 'Phổ biến'],
+        options: [
+          {
+            packageName: 'Gói 4 giờ',
+            vehicleType: 7,
+            duration: 4,
+            price: 1200000,
+            priceUnit: 'goi',
+            vehicleRefId: 'v1',
+            includes: [
+              'Xe 7 chỗ Fortuner 2023',
+              'Trang trí hoa cao cấp',
+              'Tài xế chuyên nghiệp',
+              'Rượu champagne',
+              'Trong tỉnh Quảng Nam'
+            ]
           },
-          { 
-            vehicleType: 7, 
-            price: 1200000, 
-            priceUnit: 'chuyen', 
-            note: 'Xe 7 chỗ, Fortuner, trang trí hoa', 
-            vehicleRefId: 'v1' 
+          {
+            packageName: 'Gói cả ngày',
+            vehicleType: 7,
+            duration: 10,
+            price: 2500000,
+            priceUnit: 'goi',
+            vehicleRefId: 'v1',
+            includes: [
+              'Xe 7 chỗ Fortuner 2023',
+              'Trang trí hoa cao cấp',
+              'Tài xế + phụ xe',
+              'Rượu champagne',
+              'Không giới hạn km'
+            ]
+          }
+        ],
+        active: true
+      },
+      {
+        id: 's1-vip',
+        type: 'su-kien',
+        title: 'Xe cưới hỏi - Gói VIP',
+        region: 'Toàn miền Trung',
+        desc: 'Gói cưới hỏi cao cấp nhất. Mercedes V-Class, dịch vụ 5 sao, phục vụ VIP.',
+        image: '/images/blog/post-03.jpg',
+        tags: ['Mercedes V-Class', 'Luxury', 'Dịch vụ 5⭐'],
+        options: [
+          {
+            packageName: 'Gói nửa ngày',
+            vehicleType: 7,
+            duration: 6,
+            price: 3000000,
+            priceUnit: 'goi',
+            vehicleRefId: 'v4',
+            includes: [
+              'Mercedes V-Class VIP',
+              'Trang trí hoa luxury',
+              'Tài xế + phụ xe',
+              'Champagne cao cấp',
+              'Red carpet',
+              'Không giới hạn km'
+            ]
           },
-          { 
-            vehicleType: 9, 
-            price: 1500000, 
-            priceUnit: 'chuyen',
-            note: 'Xe 9 chỗ, VIP, trang trí hoa cao cấp'
-          },
-          { 
-            vehicleType: 16, 
-            price: 2000000, 
-            priceUnit: 'chuyen',
-            note: 'Xe 16 chỗ, Transit, phục vụ đám đông',
-            vehicleRefId: 'v2'
-          },
-          { 
-            vehicleType: 29, 
-            price: 3500000, 
-            priceUnit: 'chuyen',
-            note: 'Xe 29 chỗ, Hyundai County, đám lớn',
-            vehicleRefId: 'v3'
+          {
+            packageName: 'Gói cả ngày',
+            vehicleType: 7,
+            duration: 12,
+            price: 5000000,
+            priceUnit: 'goi',
+            vehicleRefId: 'v4',
+            includes: [
+              'Mercedes V-Class VIP',
+              'Trang trí hoa luxury',
+              'Team tài xế chuyên nghiệp',
+              'Full beverage service',
+              'Red carpet + photographer',
+              'Toàn miền Trung'
+            ]
           }
         ],
         active: true
@@ -215,6 +288,38 @@ export const OPERATORS: Operator[] = [
             price: 700000, 
             priceUnit: 'chuyen',
             note: 'Xe 4-7 chỗ, bao tài xế, bảo hiểm'
+          }
+        ],
+        active: true
+      },
+      {
+        id: 's6',
+        type: 'bao-xe',
+        title: 'Bao xe tuyến Đà Nẵng – Bà Nà',
+        region: 'Đà Nẵng ↔ Bà Nà',
+        desc: 'Bao xe Đà Nẵng - Bà Nà Hills, lịch trình linh hoạt, phù hợp du lịch gia đình.',
+        options: [
+          { 
+            vehicleType: 4, 
+            price: 600000, 
+            priceUnit: 'chuyen',
+            note: 'Xe 4-7 chỗ, bao tài xế, bảo hiểm'
+          }
+        ],
+        active: true
+      },
+      {
+        id: 's33',
+        type: 'san-bay',
+        title: 'Đưa đón sân bay Đà Nẵng ↔ Bà Nà',
+        region: 'Sân bay Đà Nẵng ↔ Bà Nà',
+        desc: 'Đưa đón sân bay - Bà Nà Hills, xe mới, tài xế nhiệt tình.',
+        options: [
+          { 
+            vehicleType: 4, 
+            price: 600000, 
+            priceUnit: 'chuyen',
+            note: 'Xe 4-7 chỗ, đã bao tài xế, bảo hiểm' 
           }
         ],
         active: true

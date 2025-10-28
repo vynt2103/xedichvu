@@ -1,263 +1,174 @@
-"use client";
-
-import { useTheme } from "next-themes";
+import { MapPin, Clock, Phone, Mail } from "lucide-react";
 
 const NewsLatterBox = () => {
-  const { theme } = useTheme();
-
   return (
     <div
-      className="wow fadeInUp relative z-10 rounded-sm bg-white p-8 shadow-three dark:bg-gray-dark sm:p-11 lg:p-8 xl:p-11"
+      className="relative z-10 rounded-2xl bg-white p-8 shadow-three dark:bg-gray-dark sm:p-11 lg:p-8 xl:p-11"
       data-wow-delay=".2s"
     >
-      <h3 className="mb-4 text-2xl font-bold leading-tight text-black dark:text-white">
-        Let’s Work Together!
+      <h3 className="mb-6 text-2xl font-bold leading-tight text-black dark:text-white">
+        Thông tin liên hệ
       </h3>
-      <p className="mb-11 border-b border-body-color border-opacity-25 pb-11 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25">
-        We’re a team of freelance developers at <strong>newdanang.vn</strong>{" "}
-        available for hire. Subscribe below or contact us directly to discuss
-        your project.
-      </p>
-      <div>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          className="mb-4 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          className="mb-4 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-        />
-        <input
-          type="submit"
-          value="Subscribe"
-          className="mb-5 flex w-full cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
-        />
-        <p className="text-center text-base leading-relaxed text-body-color dark:text-body-color-dark">
-          Prefer email? Reach us directly at{" "}
+      
+      <div className="space-y-6">
+        {/* Address */}
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+            <MapPin size={24} />
+          </div>
+          <div className="flex-1">
+            <h4 className="text-base font-semibold text-dark dark:text-white mb-1">
+              Địa chỉ
+            </h4>
+            <p className="text-sm text-body-color dark:text-body-color-dark leading-relaxed">
+              Đà Nẵng, Việt Nam
+            </p>
+          </div>
+        </div>
+
+        {/* Phone */}
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+            <Phone size={24} />
+          </div>
+          <div className="flex-1">
+            <h4 className="text-base font-semibold text-dark dark:text-white mb-1">
+              Hotline
+            </h4>
+            <a
+              href="tel:0769222297"
+              className="text-sm text-body-color dark:text-body-color-dark hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              0769 222 297
+            </a>
+          </div>
+        </div>
+
+        {/* Email */}
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+            <Mail size={24} />
+          </div>
+          <div className="flex-1">
+            <h4 className="text-base font-semibold text-dark dark:text-white mb-1">
+              Email
+            </h4>
           <a
             href="mailto:info@newdanang.vn"
-            className="text-primary hover:underline"
+              className="text-sm text-body-color dark:text-body-color-dark hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-all"
           >
             info@newdanang.vn
           </a>
-        </p>
+          </div>
+        </div>
+
+        {/* Working Hours */}
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400">
+            <Clock size={24} />
+          </div>
+          <div className="flex-1">
+            <h4 className="text-base font-semibold text-dark dark:text-white mb-1">
+              Giờ làm việc
+            </h4>
+            <p className="text-sm text-body-color dark:text-body-color-dark leading-relaxed">
+              8:00 - 22:00<br />
+              Hàng ngày (bao gồm cuối tuần)
+            </p>
+          </div>
+        </div>
       </div>
 
+      {/* Map Embed */}
+      <div className="mt-8">
+        <h4 className="text-base font-semibold text-dark dark:text-white mb-4">
+          Vị trí
+        </h4>
+        <div className="overflow-hidden rounded-xl">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245368.52922943447!2d107.91260697871265!3d16.072092183764023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219c792252a13%3A0xfc14e3a044436487!2zxJDDoCBO4bq1bmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1698765432100!5m2!1svi!2s"
+            width="100%"
+            height="250"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="grayscale hover:grayscale-0 transition-all duration-300"
+          ></iframe>
+        </div>
+      </div>
+
+      {/* Background Shapes */}
       <div>
-        <span className="absolute left-2 top-7">
+        <span className="absolute -right-7 -bottom-7 z-[-1]">
           <svg
-            width="57"
-            height="65"
-            viewBox="0 0 57 65"
+            width={77}
+            height={77}
+            viewBox="0 0 77 77"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="1.66343" cy="74.9984" r="1.66343" transform="rotate(-90 1.66343 74.9984)" fill="#3056D3" />
+            <circle cx="1.66343" cy="30.9998" r="1.66343" transform="rotate(-90 1.66343 30.9998)" fill="#3056D3" />
+            <circle cx="16.3016" cy="74.9984" r="1.66343" transform="rotate(-90 16.3016 74.9984)" fill="#3056D3" />
+            <circle cx="16.3016" cy="30.9998" r="1.66343" transform="rotate(-90 16.3016 30.9998)" fill="#3056D3" />
+            <circle cx="30.9398" cy="74.9984" r="1.66343" transform="rotate(-90 30.9398 74.9984)" fill="#3056D3" />
+            <circle cx="30.9398" cy="30.9998" r="1.66343" transform="rotate(-90 30.9398 30.9998)" fill="#3056D3" />
+            <circle cx="45.578" cy="74.9984" r="1.66343" transform="rotate(-90 45.578 74.9984)" fill="#3056D3" />
+            <circle cx="45.578" cy="30.9998" r="1.66343" transform="rotate(-90 45.578 30.9998)" fill="#3056D3" />
+            <circle cx="60.2162" cy="74.9984" r="1.66343" transform="rotate(-90 60.2162 74.9984)" fill="#3056D3" />
+            <circle cx="74.6634" cy="74.9984" r="1.66343" transform="rotate(-90 74.6634 74.9984)" fill="#3056D3" />
+            <circle cx="60.2162" cy="30.9998" r="1.66343" transform="rotate(-90 60.2162 30.9998)" fill="#3056D3" />
+            <circle cx="74.6634" cy="30.9998" r="1.66343" transform="rotate(-90 74.6634 30.9998)" fill="#3056D3" />
+            <circle cx="1.66343" cy="59.6641" r="1.66343" transform="rotate(-90 1.66343 59.6641)" fill="#3056D3" />
+            <circle cx="1.66343" cy="16.3003" r="1.66343" transform="rotate(-90 1.66343 16.3003)" fill="#3056D3" />
+            <circle cx="16.3016" cy="59.6641" r="1.66343" transform="rotate(-90 16.3016 59.6641)" fill="#3056D3" />
+            <circle cx="16.3016" cy="16.3003" r="1.66343" transform="rotate(-90 16.3016 16.3003)" fill="#3056D3" />
+            <circle cx="30.9398" cy="59.6641" r="1.66343" transform="rotate(-90 30.9398 59.6641)" fill="#3056D3" />
+            <circle cx="30.9398" cy="16.3003" r="1.66343" transform="rotate(-90 30.9398 16.3003)" fill="#3056D3" />
+            <circle cx="45.578" cy="59.6641" r="1.66343" transform="rotate(-90 45.578 59.6641)" fill="#3056D3" />
+            <circle cx="45.578" cy="16.3003" r="1.66343" transform="rotate(-90 45.578 16.3003)" fill="#3056D3" />
+            <circle cx="60.2162" cy="59.6641" r="1.66343" transform="rotate(-90 60.2162 59.6641)" fill="#3056D3" />
+            <circle cx="74.6634" cy="59.6641" r="1.66343" transform="rotate(-90 74.6634 59.6641)" fill="#3056D3" />
+            <circle cx="60.2162" cy="16.3003" r="1.66343" transform="rotate(-90 60.2162 16.3003)" fill="#3056D3" />
+            <circle cx="74.6634" cy="16.3003" r="1.66343" transform="rotate(-90 74.6634 16.3003)" fill="#3056D3" />
+            <circle cx="1.66343" cy="45.0261" r="1.66343" transform="rotate(-90 1.66343 45.0261)" fill="#3056D3" />
+            <circle cx="1.66343" cy="1.66343" r="1.66343" transform="rotate(-90 1.66343 1.66343)" fill="#3056D3" />
+            <circle cx="16.3016" cy="45.0261" r="1.66343" transform="rotate(-90 16.3016 45.0261)" fill="#3056D3" />
+            <circle cx="16.3016" cy="1.66343" r="1.66343" transform="rotate(-90 16.3016 1.66343)" fill="#3056D3" />
+            <circle cx="30.9398" cy="45.0261" r="1.66343" transform="rotate(-90 30.9398 45.0261)" fill="#3056D3" />
+            <circle cx="30.9398" cy="1.66343" r="1.66343" transform="rotate(-90 30.9398 1.66343)" fill="#3056D3" />
+            <circle cx="45.578" cy="45.0261" r="1.66343" transform="rotate(-90 45.578 45.0261)" fill="#3056D3" />
+            <circle cx="45.578" cy="1.66343" r="1.66343" transform="rotate(-90 45.578 1.66343)" fill="#3056D3" />
+            <circle cx="60.2162" cy="45.0261" r="1.66343" transform="rotate(-90 60.2162 45.0261)" fill="#3056D3" />
+            <circle cx="74.6634" cy="45.0261" r="1.66343" transform="rotate(-90 74.6634 45.0261)" fill="#3056D3" />
+            <circle cx="60.2162" cy="1.66343" r="1.66343" transform="rotate(-90 60.2162 1.66343)" fill="#3056D3" />
+            <circle cx="74.6634" cy="1.66343" r="1.66343" transform="rotate(-90 74.6634 1.66343)" fill="#3056D3" />
+          </svg>
+        </span>
+        <span className="absolute -right-10 top-10 z-[-1] opacity-20">
+          <svg
+            width={75}
+            height={75}
+            viewBox="0 0 75 75"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              opacity="0.5"
-              d="M0.407629 15.9573L39.1541 64.0714L56.4489 0.160793L0.407629 15.9573Z"
-              fill="url(#paint0_linear_1028_600)"
+              d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z"
+              fill="url(#paint0_linear_1179_5)"
             />
             <defs>
               <linearGradient
-                id="paint0_linear_1028_600"
-                x1="-18.3187"
-                y1="55.1044"
-                x2="37.161"
-                y2="15.3509"
+                id="paint0_linear_1179_5"
+                x1="-1.63917e-06"
+                y1="37.5"
+                x2="75"
+                y2="37.5"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0.62"
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
-              </linearGradient>
-            </defs>
-          </svg>
-        </span>
-
-        <span className="absolute bottom-24 left-1.5">
-          <svg
-            width="39"
-            height="32"
-            viewBox="0 0 39 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              opacity="0.5"
-              d="M14.7137 31.4215L38.6431 4.24115L6.96581e-07 0.624124L14.7137 31.4215Z"
-              fill="url(#paint0_linear_1028_601)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_1028_601"
-                x1="39.1948"
-                y1="38.335"
-                x2="10.6982"
-                y2="10.2511"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0.62"
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
-              </linearGradient>
-            </defs>
-          </svg>
-        </span>
-
-        <span className="absolute right-2 top-[140px]">
-          <svg
-            width="38"
-            height="38"
-            viewBox="0 0 38 38"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              opacity="0.5"
-              d="M10.6763 35.3091C23.3976 41.6367 38.1681 31.7045 37.107 17.536C36.1205 4.3628 21.9407 -3.46901 10.2651 2.71063C-2.92254 9.69061 -2.68321 28.664 10.6763 35.3091Z"
-              fill="url(#paint0_linear_1028_602)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_1028_602"
-                x1="-0.571054"
-                y1="-37.1717"
-                x2="28.7937"
-                y2="26.7564"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0.62"
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
-              </linearGradient>
-            </defs>
-          </svg>
-        </span>
-
-        <span className="absolute right-0 top-0">
-          <svg
-            width="162"
-            height="91"
-            viewBox="0 0 162 91"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g opacity="0.3">
-              <path
-                opacity="0.45"
-                d="M1 89.9999C8 77.3332 27.7 50.7999 50.5 45.9999C79 39.9999 95 41.9999 106 30.4999C117 18.9999 126 -3.50014 149 -3.50014C172 -3.50014 187 4.99986 200.5 -8.50014C214 -22.0001 210.5 -46.0001 244 -37.5001C270.8 -30.7001 307.167 -45 322 -53"
-                stroke="url(#paint0_linear_1028_603)"
-              />
-              <path
-                opacity="0.45"
-                d="M43 64.9999C50 52.3332 69.7 25.7999 92.5 20.9999C121 14.9999 137 16.9999 148 5.49986C159 -6.00014 168 -28.5001 191 -28.5001C214 -28.5001 229 -20.0001 242.5 -33.5001C256 -47.0001 252.5 -71.0001 286 -62.5001C312.8 -55.7001 349.167 -70 364 -78"
-                stroke="url(#paint1_linear_1028_603)"
-              />
-              <path
-                opacity="0.45"
-                d="M4 73.9999C11 61.3332 30.7 34.7999 53.5 29.9999C82 23.9999 98 25.9999 109 14.4999C120 2.99986 129 -19.5001 152 -19.5001C175 -19.5001 190 -11.0001 203.5 -24.5001C217 -38.0001 213.5 -62.0001 247 -53.5001C273.8 -46.7001 310.167 -61 325 -69"
-                stroke="url(#paint2_linear_1028_603)"
-              />
-              <path
-                opacity="0.45"
-                d="M41 40.9999C48 28.3332 67.7 1.79986 90.5 -3.00014C119 -9.00014 135 -7.00014 146 -18.5001C157 -30.0001 166 -52.5001 189 -52.5001C212 -52.5001 227 -44.0001 240.5 -57.5001C254 -71.0001 250.5 -95.0001 284 -86.5001C310.8 -79.7001 347.167 -94 362 -102"
-                stroke="url(#paint3_linear_1028_603)"
-              />
-            </g>
-            <defs>
-              <linearGradient
-                id="paint0_linear_1028_603"
-                x1="291.35"
-                y1="12.1032"
-                x2="179.211"
-                y2="237.617"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop
-                  offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_1028_603"
-                x1="333.35"
-                y1="-12.8968"
-                x2="221.211"
-                y2="212.617"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop
-                  offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
-              </linearGradient>
-              <linearGradient
-                id="paint2_linear_1028_603"
-                x1="294.35"
-                y1="-3.89678"
-                x2="182.211"
-                y2="221.617"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop
-                  offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
-              </linearGradient>
-              <linearGradient
-                id="paint3_linear_1028_603"
-                x1="331.35"
-                y1="-36.8968"
-                x2="219.211"
-                y2="188.617"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop
-                  offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
+                <stop stopColor="#13C296" stopOpacity="0.31" />
+                <stop offset="1" stopColor="#C4C4C4" stopOpacity="0" />
               </linearGradient>
             </defs>
           </svg>

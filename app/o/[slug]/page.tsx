@@ -3,6 +3,8 @@ import { Operator } from '@/lib/types';
 import OperatorHero from '@/components/operator/OperatorHero';
 import VehicleList from '@/components/vehicle/VehicleList';
 import ServiceBlock from '@/components/service/ServiceBlock';
+import ServiceCardV2 from '@/components/service/ServiceCardV2';
+import PriceTable from '@/components/service/PriceTable';
 import FloatingCTA from '@/components/operator/FloatingCTA';
 import HideHeaderFooter from '@/components/operator/HideHeaderFooter';
 import OperatorBreadcrumb from '@/components/Common/OperatorBreadcrumb';
@@ -103,195 +105,45 @@ export default async function OperatorPage({ params }: Props) {
           <div className="space-y-8 md:space-y-10">
             {/* Bao xe - Dịch vụ du lịch */}
             {baoXeServices.length > 0 && (
-              <div className="space-y-3 md:space-y-4">
-                <div>
-                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    Dịch vụ du lịch
-                  </h3>
-                  <p className="text-gray-600 dark:text-body-color-dark">
-                    {baoXeServices.length} tuyến có sẵn
-                  </p>
-                </div>
-
-                {/* Simple Price Table - Mobile optimized */}
-                <div className="bg-white dark:bg-[#2C303B] rounded-2xl border border-gray-200 dark:border-stroke-dark overflow-hidden shadow-lg">
-                  {/* Desktop Table */}
-                  <div className="hidden md:block overflow-x-auto">
-                    <table className="w-full">
-                      <thead className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-                        <tr>
-                          <th className="px-6 py-4 text-left font-bold text-base">Tuyến đường</th>
-                          <th className="px-6 py-4 text-left font-bold text-base">Giá</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {baoXeServices.map((service) => (
-                          service.options.map((option, optIdx) => (
-                            <tr key={`${service.id}-${optIdx}`} className="border-b border-gray-200 dark:border-stroke-dark hover:bg-gray-50 dark:hover:bg-[#1D2430] transition-colors">
-                              <td className="px-6 py-4">
-                                <div className="font-semibold text-base text-gray-900 dark:text-white">
-                                  {service.region || service.title}
-                                </div>
-                              </td>
-                              <td className="px-6 py-4">
-                                <div className="font-bold text-xl text-blue-600">
-                                  {typeof option.price === 'number' 
-                                    ? option.price.toLocaleString('vi-VN') 
-                                    : option.price}
-                                  <span className="text-sm text-gray-600 dark:text-body-color-dark ml-1">
-                                    /chuyến
-                                  </span>
-                                </div>
-                                {option.note && (
-                                  <div className="text-xs text-gray-600 dark:text-body-color-dark mt-1">
-                                    {option.note}
-                                  </div>
-                                )}
-                              </td>
-                            </tr>
-                          ))
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  {/* Mobile Cards */}
-                  <div className="md:hidden">
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-3">
-                      <h4 className="text-white font-bold text-base">Bảng giá</h4>
-                    </div>
-                    <div className="divide-y divide-gray-200 dark:divide-stroke-dark">
-                      {baoXeServices.map((service) => (
-                        service.options.map((option, optIdx) => (
-                          <div key={`${service.id}-${optIdx}`} className="p-4">
-                            <div className="font-bold text-base text-gray-900 dark:text-white mb-2">
-                              {service.region || service.title}
-                            </div>
-                            <div className="font-bold text-lg text-blue-600 mb-1">
-                              {typeof option.price === 'number' 
-                                ? option.price.toLocaleString('vi-VN') 
-                                : option.price}
-                              <span className="text-sm text-gray-600 dark:text-body-color-dark ml-1">
-                                /chuyến
-                              </span>
-                            </div>
-                            {option.note && (
-                              <div className="text-sm text-gray-600 dark:text-body-color-dark">
-                                {option.note}
-                              </div>
-                            )}
-                          </div>
-                        ))
-                      ))}
-                    </div>
-                  </div>
-                </div>
+              <div id="section-bao-xe" className="scroll-mt-20">
+                <PriceTable
+                  title="Dịch vụ du lịch"
+                  subtitle={`${baoXeServices.length} tuyến có sẵn`}
+                  services={baoXeServices}
+                  headerGradient="bg-gradient-to-r from-blue-500 to-purple-600"
+                  priceColor="text-blue-600"
+                />
               </div>
             )}
 
             {/* Sân bay - Đưa đón sân bay */}
             {sanBayServices.length > 0 && (
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    Đưa đón sân bay
-                  </h3>
-                  <p className="text-gray-600 dark:text-body-color-dark">
-                    {sanBayServices.length} tuyến có sẵn
-                  </p>
-                </div>
-
-                {/* Simple Price Table - Mobile optimized */}
-                <div className="bg-white dark:bg-[#2C303B] rounded-2xl border border-gray-200 dark:border-stroke-dark overflow-hidden shadow-lg">
-                  {/* Desktop Table */}
-                  <div className="hidden md:block overflow-x-auto">
-                    <table className="w-full">
-                      <thead className="bg-gradient-to-r from-green-500 to-teal-600 text-white">
-                        <tr>
-                          <th className="px-6 py-4 text-left font-bold text-base">Tuyến đường</th>
-                          <th className="px-6 py-4 text-left font-bold text-base">Giá</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {sanBayServices.map((service) => (
-                          service.options.map((option, optIdx) => (
-                            <tr key={`${service.id}-${optIdx}`} className="border-b border-gray-200 dark:border-stroke-dark hover:bg-gray-50 dark:hover:bg-[#1D2430] transition-colors">
-                              <td className="px-6 py-4">
-                                <div className="font-semibold text-base text-gray-900 dark:text-white">
-                                  {service.region || service.title}
-                                </div>
-                              </td>
-                              <td className="px-6 py-4">
-                                <div className="font-bold text-xl text-green-600">
-                                  {typeof option.price === 'number' 
-                                    ? option.price.toLocaleString('vi-VN') 
-                                    : option.price}
-                                  <span className="text-sm text-gray-600 dark:text-body-color-dark ml-1">
-                                    /chuyến
-                                  </span>
-                                </div>
-                                {option.note && (
-                                  <div className="text-xs text-gray-600 dark:text-body-color-dark mt-1">
-                                    {option.note}
-                                  </div>
-                                )}
-                              </td>
-                            </tr>
-                          ))
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  {/* Mobile Cards */}
-                  <div className="md:hidden">
-                    <div className="bg-gradient-to-r from-green-500 to-teal-600 px-4 py-3">
-                      <h4 className="text-white font-bold text-base">Bảng giá</h4>
-                    </div>
-                    <div className="divide-y divide-gray-200 dark:divide-stroke-dark">
-                      {sanBayServices.map((service) => (
-                        service.options.map((option, optIdx) => (
-                          <div key={`${service.id}-${optIdx}`} className="p-4">
-                            <div className="font-bold text-base text-gray-900 dark:text-white mb-2">
-                              {service.region || service.title}
-                            </div>
-                            <div className="font-bold text-lg text-green-600 mb-1">
-                              {typeof option.price === 'number' 
-                                ? option.price.toLocaleString('vi-VN') 
-                                : option.price}
-                              <span className="text-sm text-gray-600 dark:text-body-color-dark ml-1">
-                                /chuyến
-                              </span>
-                            </div>
-                            {option.note && (
-                              <div className="text-sm text-gray-600 dark:text-body-color-dark">
-                                {option.note}
-                              </div>
-                            )}
-                          </div>
-                        ))
-                      ))}
-                    </div>
-                  </div>
-                </div>
+              <div id="section-san-bay" className="scroll-mt-20">
+                <PriceTable
+                  title="Đưa đón sân bay"
+                  subtitle={`${sanBayServices.length} tuyến có sẵn`}
+                  services={sanBayServices}
+                  headerGradient="bg-gradient-to-r from-green-500 to-teal-600"
+                  priceColor="text-green-600"
+                />
               </div>
             )}
 
-            {/* Sự kiện VIP (Card format with image) */}
+            {/* Sự kiện VIP (New Card Design) */}
             {eventServices.length > 0 && (
-              <div className="space-y-6">
+              <div id="section-su-kien" className="space-y-6 scroll-mt-20">
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     Dịch vụ cưới hỏi / VIP
                   </h3>
                   <p className="text-gray-600 dark:text-body-color-dark">
-                    {eventServices.length} dịch vụ{eventServices.length > 1 ? ' có sẵn' : ''}
+                    {eventServices.length} gói lựa chọn
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {eventServices.map((service) => (
-                    <ServiceBlock
+                    <ServiceCardV2
                       key={service.id}
                       service={service}
                       vehiclesMap={vehiclesMap}
@@ -303,7 +155,7 @@ export default async function OperatorPage({ params }: Props) {
 
             {/* Tour riêng (if any) */}
             {tourServices.length > 0 && (
-              <div className="space-y-6">
+              <div id="section-tour-rieng" className="space-y-6 scroll-mt-20">
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     Tour riêng

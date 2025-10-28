@@ -22,15 +22,18 @@ export type Vehicle = {
   active?: boolean;
 };
 
-export type PriceUnit = 'chuyen' | 'ngay' | 'km';
+export type PriceUnit = 'chuyen' | 'ngay' | 'km' | 'goi';
 
 export type PriceOption = {
-  vehicleType: number;       // 5 | 7 | 9 | 16 | ...
+  packageName?: string;      // "Gói 4 giờ", "Gói Basic"
+  vehicleType?: number;      // 5 | 7 | 9 | 16 | ... (optional for packages)
   vehicleClass?: VehicleClass;
+  duration?: number;         // Duration in hours for packages
   price: number | string;    // 1200000 | "Liên hệ"
-  priceUnit: PriceUnit;      // 'chuyen' | 'ngay' | 'km'
+  priceUnit: PriceUnit;      // 'chuyen' | 'ngay' | 'km' | 'goi'
   condition?: string;        // "< 50km tính theo km"
   note?: string;             // "Bao tài xế, chưa cầu đường"
+  includes?: string[];       // Package includes list
   vehicleRefId?: string;     // link sang Vehicle.id (optional)
 };
 

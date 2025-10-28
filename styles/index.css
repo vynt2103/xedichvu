@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import NProgress styles */
+@import './nprogress.css';
+
 @layer base {
   body {
     font-family: "Inter", sans-serif;
