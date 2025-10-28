@@ -8,32 +8,33 @@ interface OperatorBreadcrumbProps {
 
 export default function OperatorBreadcrumb({ operatorName, operatorSlug }: OperatorBreadcrumbProps) {
   return (
-    <nav className="container mx-auto px-4 md:px-6 py-4 md:py-6" aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-2 text-sm">
-        <li>
+    <nav className="container mx-auto px-4 md:px-6 py-3 md:py-4" aria-label="Breadcrumb">
+      <ol className="flex flex-wrap items-center gap-1.5 md:gap-2 text-xs md:text-sm">
+        <li className="flex items-center">
           <Link
             href="/"
-            className="flex items-center text-gray-600 hover:text-blue-600 dark:text-body-color-dark dark:hover:text-blue-400 transition-colors"
+            className="flex items-center text-gray-600 hover:text-blue-600 dark:text-body-color-dark dark:hover:text-blue-400 transition-colors whitespace-nowrap"
           >
-            <Home size={16} className="mr-1" />
-            Trang chủ
+            <Home size={14} className="mr-1 flex-shrink-0" />
+            <span className="hidden sm:inline">NEWDANANG</span>
+            <span className="sm:hidden">NDN</span>
           </Link>
         </li>
-        <li>
-          <ChevronRight size={16} className="text-gray-400" />
+        <li className="flex-shrink-0">
+          <ChevronRight size={14} className="text-gray-400" />
         </li>
-        <li>
+        <li className="flex items-center">
           <Link
-            href="/operators"
-            className="text-gray-600 hover:text-blue-600 dark:text-body-color-dark dark:hover:text-blue-400 transition-colors"
+            href="/danh-sach-nha-xe"
+            className="text-gray-600 hover:text-blue-600 dark:text-body-color-dark dark:hover:text-blue-400 transition-colors whitespace-nowrap"
           >
-            Danh sách nhà xe
+            Nhà xe
           </Link>
         </li>
-        <li>
-          <ChevronRight size={16} className="text-gray-400" />
+        <li className="flex-shrink-0">
+          <ChevronRight size={14} className="text-gray-400" />
         </li>
-        <li className="text-gray-900 dark:text-white font-medium" aria-current="page">
+        <li className="text-gray-900 dark:text-white font-medium truncate max-w-[150px] sm:max-w-xs" aria-current="page">
           {operatorName}
         </li>
       </ol>

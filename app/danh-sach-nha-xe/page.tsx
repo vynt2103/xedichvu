@@ -191,8 +191,16 @@ export default function OperatorsPage() {
                       </span>
                     ))}
                     {operator.regions.length > 3 && (
-                      <span className="text-xs text-gray-500 dark:text-gray-400 px-2 py-1">
+                      <span 
+                        className="group/tooltip relative text-xs text-gray-500 dark:text-gray-400 px-2 py-1 cursor-help hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                        title={operator.regions.slice(3).join(', ')}
+                      >
                         +{operator.regions.length - 3} thêm
+                        {/* Tooltip */}
+                        <span className="invisible group-hover/tooltip:visible absolute left-0 bottom-full mb-2 px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-10 pointer-events-none">
+                          {operator.regions.slice(3).join(', ')}
+                          <span className="absolute top-full left-4 -mt-1 border-4 border-transparent border-t-gray-900 dark:border-t-gray-700"></span>
+                        </span>
                       </span>
                     )}
                   </div>
