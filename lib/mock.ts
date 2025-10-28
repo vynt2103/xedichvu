@@ -74,7 +74,7 @@ export const OPERATORS: Operator[] = [
         title: 'Xe cưới hỏi - Gói Basic',
         region: 'Đà Nẵng – Hội An',
         desc: 'Gói cưới hỏi cơ bản, phù hợp ngân sách tiết kiệm. Xe đời mới, tài xế chuyên nghiệp.',
-        image: '/images/blog/post-01.jpg',
+        image: '/anhkhang/xe/toyota-fortuner-2023.jpg',
         tags: ['Trang trí cơ bản', 'Bao tài xế', 'Trong tỉnh'],
         options: [
           {
@@ -112,7 +112,7 @@ export const OPERATORS: Operator[] = [
         title: 'Xe cưới hỏi - Gói Standard',
         region: 'Đà Nẵng – Huế – Hội An',
         desc: 'Gói cưới hỏi phổ biến nhất. Xe Fortuner/Innova cao cấp, trang trí hoa đẹp.',
-        image: '/images/blog/post-02.jpg',
+        image: '/anhkhang/xe/toyota-fortuner-2023-2.jpg',
         tags: ['Trang trí cao cấp', 'Xe Fortuner', 'Phổ biến'],
         options: [
           {
@@ -154,7 +154,7 @@ export const OPERATORS: Operator[] = [
         title: 'Xe cưới hỏi - Gói VIP',
         region: 'Toàn miền Trung',
         desc: 'Gói cưới hỏi cao cấp nhất. Mercedes V-Class, dịch vụ 5 sao, phục vụ VIP.',
-        image: '/images/blog/post-03.jpg',
+        image: '/anhkhang/xe/mercedes-v-class.webp',
         tags: ['Mercedes V-Class', 'Luxury', 'Dịch vụ 5⭐'],
         options: [
           {
