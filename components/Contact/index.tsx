@@ -228,7 +228,7 @@ const Contact = () => {
                 </summary>
                 <p className="mt-4 text-body-color dark:text-body-color-dark leading-relaxed">
                   Có! Tất cả website đều được tối ưu SEO cơ bản để khách hàng dễ tìm thấy khi 
-                  search "xe đi Đà Nẵng", "xe đưa đón sân bay Huế" v.v. trên Google.
+                  search &ldquo;xe đi Đà Nẵng&rdquo;, &ldquo;xe đưa đón sân bay Huế&rdquo; v.v. trên Google.
                 </p>
               </details>
             </div>
