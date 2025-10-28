@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { Metadata } from "next";
+import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -25,7 +26,9 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="vi">
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <Providers>
-          <ProgressBar />
+          <Suspense fallback={null}>
+            <ProgressBar />
+          </Suspense>
           <Header />
           <PageTransition>
             {children}

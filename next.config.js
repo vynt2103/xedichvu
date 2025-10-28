@@ -2,7 +2,6 @@
 const nextConfig = {
   // Performance optimizations
   reactStrictMode: true,
-  swcMinify: true,
   // Optimize images
   images: {
     remotePatterns: [
@@ -19,8 +18,6 @@ const nextConfig = {
   },
   // Enable compression
   compress: true,
-  // Optimize fonts
-  optimizeFonts: true,
 };
 
 module.exports = nextConfig;
