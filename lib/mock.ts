@@ -2,7 +2,7 @@ import { Operator } from './types';
 
 export const OPERATORS: Operator[] = [
   {
-    slug: 'anh-khang-travel',
+    slug: 'dai-hiep-travel',
     name: 'Đại Hiệp Travel',
     verified: true,
     active: true,

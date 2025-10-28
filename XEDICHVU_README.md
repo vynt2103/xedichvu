@@ -65,7 +65,7 @@ components/
 ### Development
 ```bash
 npm run dev
-# Truy cập: http://localhost:3000/o/anh-khang-travel
+# Truy cập: http://localhost:3000/o/dai-hiep-travel
 ```
 
 ### Build & Deploy
@@ -80,7 +80,7 @@ Sau khi deploy, test các route sau:
 
 | Route | Description |
 |-------|-------------|
-| `/o/anh-khang-travel` | Main demo operator với đầy đủ data |
+| `/o/dai-hiep-travel` | Main demo operator với đầy đủ data |
 | `/o/invalid-slug` | Test 404 page |
 
 ## 📱 Features đã implement
@@ -180,7 +180,7 @@ getOperator(slug) → Operator | undefined
 
 ## 🎯 Acceptance Criteria Status
 
-- ✅ `/o/anh-khang-travel` renders đầy đủ 3 sections
+- ✅ `/o/dai-hiep-travel` renders đầy đủ 3 sections
 - ✅ CTA dynamic (ẩn khi không có dữ liệu)
 - ✅ Floating bar mobile hoạt động
 - ✅ Vehicle filter client-side
@@ -196,7 +196,7 @@ getOperator(slug) → Operator | undefined
 2. Connect repo hiện tại
 3. Add domain: `xedichvu.newdanang.vn`
 4. Configure CNAME (nếu dùng DNS riêng)
-5. Deploy & verify route `/o/anh-khang-travel`
+5. Deploy & verify route `/o/dai-hiep-travel`
 
 ### Post-Deploy
 - [ ] Test mobile floating CTA
@@ -224,8 +224,8 @@ getOperator(slug) → Operator | undefined
 
 ## 🔗 Links
 
-- **Dev URL**: http://localhost:3000/o/anh-khang-travel
-- **Production**: https://xedichvu.newdanang.vn/o/anh-khang-travel
+- **Dev URL**: http://localhost:3000/o/dai-hiep-travel
+- **Production**: https://xedichvu.newdanang.vn/o/dai-hiep-travel
 - **GitHub**: (Repo URL)
 
 ## 🎬 Next Steps (Phase 2)

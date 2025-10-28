@@ -56,7 +56,7 @@ export default function Home() {
                 Chat Zalo ngay
               </a>
                 <Link
-                  href="/o/anh-khang-travel"
+                  href="/o/dai-hiep-travel"
                   className="inline-flex items-center justify-center gap-3 rounded-xl border-2 border-blue-600 dark:border-blue-500 bg-transparent px-8 py-4 text-base font-bold text-blue-600 dark:text-blue-400 transition-all hover:bg-blue-50 dark:hover:bg-blue-900/20"
                 >
                   <ExternalLink size={22} />
