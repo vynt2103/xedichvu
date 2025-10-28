@@ -1,3 +1,5 @@
+'use client';
+
 import NewsLatterBox from "./NewsLatterBox";
 import { MessageCircle, Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 
