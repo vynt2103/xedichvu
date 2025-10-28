@@ -4,7 +4,7 @@
 
 ### 1. **Logo Display - FULL SIZE** ✅
 
-#### Operator Detail Hero (`/o/[slug]`):
+#### Operator Detail Hero (`/nha-xe/[slug]`):
 **Before:**
 ```tsx
 ❌ Size: 120x120px (mobile) → 160x160px (desktop)

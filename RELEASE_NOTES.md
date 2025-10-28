@@ -106,7 +106,7 @@
 ✅ Professional card design  
 ✅ Smooth hover effects
 
-### 🚙 Operator Detail (`/o/[slug]`)
+### 🚙 Operator Detail (`/nha-xe/[slug]`)
 ✅ Hero with subtle gradients  
 ✅ Brand name background (when no cover)  
 ✅ PriceTable component (reusable)  

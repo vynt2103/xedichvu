@@ -121,7 +121,7 @@ export default function OperatorsPage() {
             {filteredOperators.map((operator) => (
               <Link
                 key={operator.slug}
-                href={`/o/${operator.slug}`}
+                href={`/nha-xe/${operator.slug}`}
                 className="group bg-white dark:bg-[#2C303B] rounded-2xl border border-gray-200 dark:border-stroke-dark hover:border-blue-300 dark:hover:border-blue-500/50 transition-all duration-300 overflow-hidden hover:shadow-xl hover:scale-[1.02]"
               >
                 {/* Clean Header with Logo - FULL SIZE */}
